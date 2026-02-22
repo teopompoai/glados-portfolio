@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ship It o Skip It — Vibe Coding sin romper producción</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #111833;
+      --muted: #a2accb;
+      --text: #ecf1ff;
+      --accent: #6ea8fe;
+      --accent-2: #7ef0c1;
+      --danger: #ff6b81;
+      --ok: #7ef0c1;
+      --border: #253053;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 20% 0%, #1a2550 0%, var(--bg) 45%);
+      line-height: 1.5;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    .hero {
+      display: grid;
+      gap: 16px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #121a3a, #0e1530);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    h1 { margin: 0; font-size: clamp(1.8rem, 3.4vw, 3rem); }
+    h2 { margin: 0 0 10px; font-size: clamp(1.2rem, 2vw, 1.6rem); }
+    p { margin: 0; color: var(--muted); }
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      font-size: .85rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--accent-2);
+      background: rgba(126,240,193,.08);
+    }
+    .stats {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+    }
+    .stat {
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.02);
+    }
+    .stat b { font-size: 1.25rem; display: block; color: var(--text); }
+    .grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+    ul { margin: 8px 0 0; padding-left: 18px; }
+    li { color: var(--muted); margin: 6px 0; }
+    .danger { color: var(--danger); }
+    .ok { color: var(--ok); }
+    .cta {
+      margin-top: 26px;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(110,168,254,.15), rgba(126,240,193,.08));
+    }
+    .btn {
+      margin-top: 14px;
+      display: inline-block;
+      text-decoration: none;
+      color: #071126;
+      background: var(--accent-2);
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 10px;
+    }
+    footer { margin: 26px 0 12px; color: #7f8ab3; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <span class="pill">Conferencia · Ship It or Skip It</span>
+      <h1>Vibe Coding sin destruir producción</h1>
+      <p>
+        Un reporte de campo, no humo: cómo usar IA para acelerar desarrollo sin convertir tu sistema en una ruleta rusa.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>26 productos</b><span>Generados en una sola noche</span></div>
+        <div class="stat"><b>120,000 líneas</b><span>de código producido con IA</span></div>
+        <div class="stat"><b class="danger">50% falló</b><span>tras 3 meses en producción</span></div>
+        <div class="stat"><b>+20–30%</b><span>de throughput con IA (Octoverse)</span></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>El Vibe Check</h2>
+        <p>La velocidad es real. El riesgo también.</p>
+        <ul>
+          <li>Prototipos y features salen en horas, no semanas.</li>
+          <li>Sin barandales, la deuda y el drift arquitectónico se disparan.</li>
+          <li>La confianza del equipo baja cuando "funciona" pero nadie entiende el porqué.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Los 3 pecados más comunes</h2>
+        <ul>
+          <li><b>Pecado #1:</b> mandar a producción sin leer ni entender el código.</li>
+          <li><b>Pecado #2:</b> fallas silenciosas por falta de observabilidad.</li>
+          <li><b>Pecado #3:</b> ausencia de specs; el código termina siendo la única “documentación”.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Barandales prácticos</h2>
+        <ul>
+          <li><b>Regla dorada:</b> si no puedes explicar el código, no lo comitees.</li>
+          <li><b>Flujo recomendado:</b> Spec → Prompt → Generate → Test → Review → Ship.</li>
+          <li><b>Automatiza calidad:</b> lint, type-check y security scan en cada guardado/CI.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Nuevo rol del desarrollador</h2>
+        <ul>
+          <li>Menos escritura de sintaxis, más diseño de sistemas.</li>
+          <li>Menos velocidad de tipeo, más claridad de intención.</li>
+          <li>El valor cambia de “líneas entregadas” a “problemas resueltos”.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cta">
+      <h2>Qué hacer este lunes</h2>
+      <ul>
+        <li>Audita código generado por IA para detectar intención perdida.</li>
+        <li>Formaliza la regla: <span class="ok">“si no lo puedes explicar, no lo subes”.</span></li>
+        <li>Agrega al menos un guardrail automático a tu pipeline hoy.</li>
+        <li>Identifica una tarea commodity para delegar a agentes IA.</li>
+      </ul>
+      <a class="btn" href="https://shipitslide-7jlrs9gm.manus.space/slides.html" target="_blank" rel="noreferrer">Ver slides originales</a>
+    </section>
+
+    <footer>
+      Basado en la charla de Alex Cinovoj (CTO & Co-Founder, TechTide AI). Adaptación al español y rediseño para formato landing.
+    </footer>
+  </main>
+</body>
+</html>
